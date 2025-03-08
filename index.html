@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | Tip calculator app</title>
+</head>
+<body>
+
+  <div class="wrapper">
+    
+    <div class="logo-container">
+      <img src="images/logo.svg" alt="splitter">
+    </div>
+    
+
+    <div class="calculator-container">
+      <div class="bill-container">
+        <div class="bill-price-container">
+          <p>Bill</p>
+          <div>
+            <img src="images/icon-dollar.svg" alt="dollar">
+            <input type="number" id="bill-amount-input" placeholder="0">
+          </div>
+        </div>
+
+        <div class="select-tip-container">
+          <p>Select Tip %</p>
+          <div class="tip-buttons-container">
+            <button data-value="5">5%</button>
+            <button data-value="10">10%</button>
+            <button data-value="15">15%</button>
+            <button data-value="25">25%</button>
+            <button data-value="50">50%</button>
+            <input type="number" id="custom-tip-amount-input" placeholder="Custom">
+          </div>
+        </div>
+
+        <div class="number-of-people-container">
+          <div class="warning-container">
+            <p>Number of People</p>
+            <p id="zero-warning">Can't be zero</p>
+          </div>
+          <div class="number-of-people-wrapper">
+            <img src="images/icon-person.svg" alt="person icon">
+            <input type="number" id="number-of-people-input" placeholder="0">
+          </div>
+        </div>
+      </div>
+
+      <div class="total-container">
+        <div>
+          <div class="tip-amount">
+            <div>
+              <p>Tip Amount</p>
+              <p>/ person</p>
+            </div>
+            <p id="tip-amount-total">$0.00</p>
+          </div>
+          <div class="total-amount">
+            <div>
+              <p>Total</p>
+              <p>/ person</p>
+            </div>
+            <p id="total-amount-price">$0.00</p>
+          </div>
+        </div>
+        <button id="reset-button">RESET</button>
+      </div>
+
+    </div>
+  </div>
+  
+<!-- github.com/macropunk -->
+<script src="script.js"></script>
+</body>
+</html>

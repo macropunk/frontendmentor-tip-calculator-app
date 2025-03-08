@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inconsolata:wght@200..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Space Mono", sans-serif;
+}
+:root {
+    --cyan: hsl(172, 67%, 45%);
+    --very-dark-cyan: hsl(183, 100%, 15%);
+    --dark-grayish-cyan: hsl(186, 14%, 43%);
+    --grayish-cyan: hsl(184, 14%, 56%);
+    --light-grayish-cyan: hsl(185, 41%, 84%);
+    --very-light-grayish-cyan: hsl(189, 41%, 97%);
+}
+body {
+    background-color: var(--light-grayish-cyan);
+    margin-bottom: 100px;
+}
+.wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.calculator-container {
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    padding: 40px;
+    gap: 40px;
+    margin: 0 auto;
+    max-width: 1100px;
+}
+
+/* logo */
+.logo-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.logo-container img {
+    padding: 70px;
+}
+
+/* bill container */
+.bill-container {
+    width: 50%;
+}
+/* bill price and number of people*/
+.bill-price-container p, 
+.number-of-people-container p,
+.select-tip-container p {
+    color: var(--dark-grayish-cyan);
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+#zero-warning {
+    color: red;
+    display: none;
+}
+.bill-price-container div, 
+.number-of-people-container div {
+    background-color: var(--very-light-grayish-cyan);
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 15px;
+}
+.warning-container {
+    background-color: transparent !important;
+    padding: 0 !important;
+}
+.bill-price-container div input, 
+.number-of-people-container div input {
+    text-align: end;
+    background-color: transparent;
+    width: 90%;
+    font-size: 1.5rem;
+    padding: 0;
+    border: none;
+    color: var(--very-dark-cyan);
+    font-weight: 700;
+}
+.bill-price-container div input:focus, 
+.number-of-people-container div input:focus{
+    outline: none;
+}
+.bill-price-container div:focus-within, 
+.number-of-people-container div:focus-within {
+    outline: 2px solid var(--cyan);
+}
+/*  this removes the little arrows beside the number inputs */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.bill-price-container div img, 
+.number-of-people-container div img {
+    align-self: center;
+}
+/* select tip container */
+.select-tip-container {
+    margin: 50px 0;
+}
+.select-tip-container div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+.select-tip-container div button {
+    background-color: var(--very-dark-cyan);
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 10px 0;
+    border-radius: 5px;
+    transition: all 0.150s;
+}
+.select-tip-container div button:hover {
+    background-color: var(--light-grayish-cyan);
+    cursor: pointer;
+}
+.select-tip-container div button:focus {
+    background-color: var(--cyan);
+    color: var(--very-dark-cyan);
+}
+#custom-tip-amount-input {
+    text-align: end;
+    background-color: var(--very-light-grayish-cyan);
+    font-size: 1.5rem;
+    padding: 0 10px;
+    border: none;
+    color: var(--very-dark-cyan);
+    font-weight: 700;
+    border-radius: 5px;
+    min-width: 0;
+}
+
+#custom-tip-amount-input:focus {
+    outline: 2px solid var(--cyan);
+}
+#custom-tip-amount-input::placeholder {
+    text-align: center;
+}
+
+/* tip / total container */
+.total-container {
+    background-color: var(--very-dark-cyan);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 15px;
+    width: 50%;
+    padding: 40px 50px;
+}
+.tip-amount {
+    margin-bottom: 40px;
+}
+.tip-amount,
+.total-amount {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.tip-amount div p:first-child,
+.total-amount div p:first-child{
+    color: white;
+    font-size: 1.2rem;
+}
+.tip-amount div p:last-child,
+.total-amount div p:last-child {
+    color: var(--grayish-cyan);
+}
+#tip-amount-total,
+#total-amount-price {
+    color: var(--cyan);
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+#reset-button {
+    color: var(--very-dark-cyan);
+    font-size: 1.5rem;
+    font-weight: 700;
+    background-color: var(--cyan);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 0;
+    transition: all 0.2s;
+}
+#reset-button:hover {
+    background-color: var(--light-grayish-cyan);
+    cursor: pointer;
+}
+#reset-button:active {
+    background-color: var(--very-light-grayish-cyan);
+}
+
+@media (max-width: 1000px) {
+    .calculator-container {
+        flex-direction: column;
+    }
+    .total-container,
+    .bill-container {
+        width: 100%;
+    }
+    #reset-button {
+        margin-top: 70px;
+    }
+    body {
+        margin: 0;
+    }
+}
+@media (max-width: 600px) {
+    .logo-container img {
+        padding: 40px;
+    }
+    .bill-price-container p, 
+    .number-of-people-container p,
+    .select-tip-container p {
+    font-size: 1rem;
+    }
+    #tip-amount-total,
+    #total-amount-price {
+    font-size: 1.8rem;
+    }
+    .calculator-container {
+        padding: 30px;
+    }
+}
+@media (max-width: 400px) {
+    .total-container {
+        padding: 20px;
+    }
+    .tip-amount {
+        margin: 20px 0;
+    }
+    .select-tip-container div {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #reset-button {
+        margin-top: 40px;
+    }
+}
+@media (max-width: 362px) {
+    .bill-price-container p, 
+    .number-of-people-container p,
+    .select-tip-container p {
+    font-size: 0.8rem;
+    }
+    #tip-amount-total,
+    #total-amount-price {
+    font-size: 1.5rem;
+    }
+    .calculator-container {
+        padding: 30px;
+    }
+    .tip-amount div p:first-child,
+    .total-amount div p:first-child{
+    color: white;
+    font-size: 0.8rem;
+    }
+    .calculator-container {
+        padding: 20px;
+    }
+    .logo-container img {
+        padding: 50px;
+    }
+    #reset-button {
+        font-size: 1rem;
+    }
+}
+
+/* github.com/macropunk */
