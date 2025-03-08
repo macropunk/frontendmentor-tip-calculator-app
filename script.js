@@ -48,7 +48,9 @@ numberOfPeopleInput.addEventListener("input", ()=>{
     if(numberOfPeopleInput.value == 0){
         numberOfPeopleWrapper.style.outlineColor = "red";
         zeroWarning.style.display = "block";
+        numberOfPeopleInput.value = "";
     }else if(numberOfPeopleInput.value < 0){
+        numberOfPeopleWrapper.style.outlineColor = "red";
         numberOfPeopleInput.value = "";
     }else{
         numberOfPeopleWrapper.style.outlineColor = "hsl(172, 67%, 45%)";
@@ -60,6 +62,13 @@ numberOfPeopleInput.addEventListener("input", ()=>{
 billInput.addEventListener("input", ()=>{
     if(!percentage == 0){
         result()
+    }
+
+    if(parseFloat(billInput.value) <= 0){
+        billInput.value = "";
+        document.querySelector(".bill-price-container div").style.outlineColor = "red";
+    }else{
+        document.querySelector(".bill-price-container div").style.outlineColor = "hsl(172, 67%, 45%)";
     }
 })
 
